@@ -1,3 +1,7 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Blixter/Trading/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Blixter/Trading/?branch=master)
+
+[![Build Status](https://scrutinizer-ci.com/g/Blixter/Trading/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Blixter/Trading/build-status/master)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
