@@ -9,9 +9,9 @@ const firefox = require('selenium-webdriver/firefox');
 
 // Application Server
 // local
-const serverUri = "http://localhost:3000";
+// const serverUri = "http://localhost:3000";
 // travis
-// const serverUri = "http://localhost:8082";
+const serverUri = "http://localhost:8082";
 const By = webdriver.By;
 
 let browser;
