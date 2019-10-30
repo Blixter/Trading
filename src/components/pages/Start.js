@@ -9,7 +9,7 @@ const Start = () => {
                 <Col md></Col>
                 <Col md={10}>
                     <Jumbotron>
-                        <p className="display-3">Welcome to Gold Trading!</p>
+                        <h2 className="display-3">Welcome to Gold Trading!</h2>
                         <p className="font-italic">
                         This is the number one Trading platform for Gold and Silver in the world!
                             </p>

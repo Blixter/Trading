@@ -39,6 +39,15 @@ function assertH1(target) {
     });
 }
 
+function assertH2(target) {
+    browser.findElement(By.css("h2")).then(function (element) {
+        element.getText().then(function (text) {
+            assert.equal(text, target);
+        })
+            .catch(error => console.log(error.message));
+    });
+}
+
 
 test.describe('Navbar navigation', function () {
 
@@ -66,7 +75,7 @@ test.describe('Navbar navigation', function () {
                 assert.notEqual(title, "Bananer");
             })
             .then(function () {
-                assertH1("Welcome to Gold Trading!");
+                assertH2("Welcome to Gold Trading!");
                 matchUrl("");
             })
             .then(() => done())
@@ -103,7 +112,7 @@ test.describe('Navbar navigation', function () {
     test.it('Test go to Gold Trading in navbar', function (done) {
         goToNavLink("Gold Trading");
 
-        assertH1("Welcome to Gold Trading!");
+        assertH2("Welcome to Gold Trading!");
         matchUrl("");
 
         done();
