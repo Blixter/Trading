@@ -8,7 +8,7 @@ import TradeObject from './TradeObject'
 
 import './styles/charts.css';
 
-let socket = io.connect("http://localhost:1337");
+let socket = io.connect("https://trading-api.blixter.me");
 
 class LineGraph extends Component {
 

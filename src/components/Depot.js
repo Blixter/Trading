@@ -15,13 +15,13 @@ const Deposit = ({balance, setBalance, depot, setDepot}) => {
             console.log(userData.user.email)
             // Check if the stored token still is valid.
             // Remove the token and redirect to '/login' if it's not valid.
-            axios.get(`http://www.localhost:1337/auth/check`,
+            axios.get(`https://trading-api.blixter.me/auth/check`,
                 { headers: { "x-access-token": `${userData.token}` } })
                 .then(res => {
                     // If the token is valid
                     if (res.status === 200) {
                         console.log("here")
-                        axios.get('http://www.localhost:1337/depots/view',
+                        axios.get('https://trading-api.blixter.me/depots/view',
                         { headers: {"x-access-token" : `${userData.token}`} })
                         .then(res => {
                             setBalance(res.data.balance)

@@ -8,8 +8,8 @@ import './styles/form.css';
 const TradeObject = ({ goldValue, silverValue, setBalance, setDepot, setTradeAlert }) => {
     const userData = JSON.parse(localStorage.getItem("user"));
     const { register, handleSubmit, errors } = useForm();
-    const sellUrl = 'http://www.localhost:1337/objects/sell'
-    const buyUrl = 'http://www.localhost:1337/objects/buy'
+    const sellUrl = 'https://trading-api.blixter.me/objects/sell'
+    const buyUrl = 'https://trading-api.blixter.me/objects/buy'
 
     const onSubmit = (data, e) => {
         let url = ''
@@ -35,7 +35,7 @@ const TradeObject = ({ goldValue, silverValue, setBalance, setDepot, setTradeAle
         { headers: {"x-access-token" : `${userData.token}`} })
         .then(res => {
             setTradeAlert(res.data.message);
-            axios.get('http://www.localhost:1337/depots/view',
+            axios.get('https://trading-api.blixter.me/depots/view',
                     { headers: {"x-access-token" : `${userData.token}`} })
                     .then(res => {
                         setBalance(res.data.balance)

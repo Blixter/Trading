@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "PORT=8082 react-scripts start & mocha test/*.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && rsync -av build/* deploy@blixter.me:/var/www/trading.blixter.me/html/"
   },
   "eslintConfig": {
     "extends": "react-app"

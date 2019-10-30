@@ -47,7 +47,7 @@ class Login extends Component {
         event.preventDefault();
 
         if (formValid(this.state)) {
-            axios.post('http://www.localhost:1337/auth/login', {
+            axios.post('https://trading-api.blixter.me/auth/login', {
                 email: this.state.email,
                 password: this.state.password
             })

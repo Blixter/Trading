@@ -50,7 +50,7 @@ class Register extends Component {
         e.preventDefault();
 
         if (formValid(this.state)) {
-            axios.post('http://www.localhost:1337/auth/register', {
+            axios.post('https://trading-api.blixter.me/auth/register', {
                 firstname: this.state.firstName,
                 lastname: this.state.lastName,
                 email: this.state.email,
