@@ -2,7 +2,6 @@
 [![Build Status](https://scrutinizer-ci.com/g/Blixter/Trading/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Blixter/Trading/build-status/master)
 [![Build Status](https://travis-ci.org/Blixter/Trading.svg?branch=master)](https://travis-ci.org/Blixter/Trading)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -21,52 +20,27 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Krav 2: Frontend
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Jag har fortsatt att arbeta med React. Jag gillar att arbeta med React och jag blir hela tiden mer bekväm att arbeta med komponenter. I detta projektet har jag försökt att del upp det mesta i olika komponenter och jag börjar verkligen förstå tjusningen i att arbeta på detta sätt. Jag hade lite små problem i början med hur jag skulle skicka states mellan alla olika komponenter på bästa sätt. Till slut lyckades jag till och med att skicka med states via Router som jag först inte trodde var möjligt. Det gick genom att skicka det via render. Tack vara det lyckades jag skapa en Logout-länk i navbaren som bara visas när användaren är inloggad. När en användare loggar in skickas sätter jag staten som skickades via Routern till true, mycket smidigt!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Jag har återigen valt att styra layouten med Bootstrap, denna gång installerade jag även React-Bootstrap, som är Bootstrap integrerat i React. Hela sidan är responsiv och fungerar på alla olika storlekar tack vara detta.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Som graf valde jag efter mycket om och men till slut på Apex Charts. Främst för att de hade bra dokumentation kring implementering i React och även ett paket för React. Jag ritar upp de två olika objekten (guld och silver) i samma graf. På Trading-sidan kan se sin depå, fylla på saldot och köpa/sälja objekten, samt se grafen. Jag valde alltså att visa allt på samma sida.
 
-### `npm run eject`
+För att få graf-datan från servern i realtid har jag använt mig av paketet socket.io-client. Socket-io verkar vara det bästa paketet på marknaden just nu och jag personligen känner mig bekväm med paketet. Det fungerar som det skall. Däremot hade jag gärna skapat mer funktionalitet, så som att varje köpta eller sålda objekt sparas i en databas, vilket hade det gjort det möjligt att visa köphistorik.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Krav 5: Tester frontend
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Use-case 1** "Från startsidan skall användaren via navbaren kunna nå routen /login"
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Use-case 2** "Från startsidan skall användaren via navbaren kunna nå routen /register"
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Use-case 3** "Från startsidan skall användaren via navbaren kunna nå routen /trading, men användaren skall bli tillbaka skickad till routen /login eftersom användaren inte är inloggad."
 
-## Learn More
+**Use-case 4** "På login-sidan skall det finnas en submit-knapp i formuläret."
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Use-case 5** "På login-sidan skall användaren kunna fylla i email-adress, lösenord och sedan trycka på enter."
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Eftersom jag inte kunde logga in på sidan blev det väldigt simpla test.
