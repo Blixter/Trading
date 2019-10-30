@@ -4,7 +4,7 @@
 const assert = require('assert');
 const webdriver = require('selenium-webdriver');
 const test = require('selenium-webdriver/testing');
-const { Key, until } = require('selenium-webdriver');
+const { Key } = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 
 // Application Server
@@ -30,12 +30,6 @@ function assertH1(target) {
         })
             .catch(error => console.log(error.message));
     });
-}
-
-async function getItem(key){
-    await browser.executeScript(() => {
-       return localStorage.getItem(arguments[0])
-    }, key)
 }
 
 
