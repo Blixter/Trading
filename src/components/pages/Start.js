@@ -1,22 +1,19 @@
 import React from 'react';
-import { Jumbotron, Container, Row, Col, Button } from 'react-bootstrap'
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap'
 
 const Start = () => {
 
-    // If name has been set, show this.
     return (
         <Container>
             <Row>
                 <Col md></Col>
                 <Col md={10}>
                     <Jumbotron>
-                            <h1>Welcome to Gold Trading!</h1>
-                            <p>
-                                This is the number one Trading platform for Gold and Silver in the world!
+                        <p className="display-3">Welcome to Gold Trading!</p>
+                        <p className="font-italic">
+                        This is the number one Trading platform for Gold and Silver in the world!
                             </p>
-                            <p>
-                                <Button variant="primary">Learn more</Button>
-                            </p>
+                            <p>If you want to make money, this is the place for you! Register an account and head over to Trading.</p>
                     </Jumbotron>
                 </Col>
                 <Col md></Col>

@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 
-const NavMenu = () => {
+const NavMenu = ({isLoggedIn}) => {
+    const [navLoggedIn, setNavLoggedIn] = useState(null)
     
+
+    function logOut() {
+        localStorage.removeItem("user")
+    }
+
+    useEffect(() => {
+        console.log(isLoggedIn)
+        if (isLoggedIn) {
+            setNavLoggedIn(<Nav>
+                <Nav.Link href="/" onClick={logOut}>Log out</Nav.Link>
+                </Nav>)
+        }
+    }, [isLoggedIn])
+
     return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
     <Navbar.Brand href="/">Gold Trading</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -14,6 +29,7 @@ const NavMenu = () => {
         <Nav.Link href="/login">Login</Nav.Link>
         <Nav.Link href="/trading">Trading</Nav.Link>
         </Nav>
+        {navLoggedIn}
     </Navbar.Collapse>
     </Navbar>
     );

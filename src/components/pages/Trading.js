@@ -42,6 +42,7 @@ const Objects = () => {
             localStorage.removeItem("user");
             setRedirect(true);
         }
+    // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
@@ -55,7 +56,7 @@ const Objects = () => {
         <Container>
             <Row>
                 <Col md></Col>
-                <Col md={6}>
+                <Col md={8}>
                     <h1>Trading</h1>
                     <AlertMessage tradeAlert={tradeAlert} setTradeAlert={setTradeAlert} />
                     <LineGraph 

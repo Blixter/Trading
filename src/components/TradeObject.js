@@ -1,6 +1,6 @@
 import React  from 'react';
 import useForm from 'react-hook-form';
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import axios from 'axios';
 
 import './styles/form.css';
@@ -44,6 +44,7 @@ const TradeObject = ({ goldValue, silverValue, setBalance, setDepot, setTradeAle
                 })
     };
     return (
+        <Container>
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group>
                     <Form.Label>Choose to buy or sell</Form.Label>
@@ -72,6 +73,7 @@ const TradeObject = ({ goldValue, silverValue, setBalance, setDepot, setTradeAle
                     Submit
                 </Button>
             </Form>
+        </Container>
     );
 }
 export default TradeObject;

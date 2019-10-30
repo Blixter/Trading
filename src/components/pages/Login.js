@@ -54,6 +54,7 @@ class Login extends Component {
                 .then(res => {
                     if (res.data.token) {
                         localStorage.setItem('user', JSON.stringify(res.data))
+                        this.props.setIsLoggedIn(true)
                         this.setState({
                             redirect: true
                         })

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { Card, ListGroup, Table, Button } from 'react-bootstrap'
+import { Card, ListGroup, Table} from 'react-bootstrap'
 
 import Balance from './Balance'
 
@@ -37,22 +37,19 @@ const Deposit = ({balance, setBalance, depot, setDepot}) => {
             localStorage.removeItem("user");
             setRedirect(true);
         }
-
+    // eslint-disable-next-line
     }, []);
 
-    function logOut() {
-        localStorage.clear()
-        setRedirect(true);
-    }
-
     function checkForObjects() {
-        if (!depot.objects) {
-            return "No objects"
-        } else {
-            let tableData = depot.objects.map(function(obj) {
-                return <tr><td>{obj.name}</td><td>{obj.amount} gram</td></tr>
-            })
-            return <Table bordered size="sm"><tbody>{tableData}</tbody></Table>
+        if (depot.objects) {
+            if (depot.objects.length === 0) {
+                return <p className="text-muted">No objects here!</p>
+            } else {
+                let tableData = depot.objects.map(function(obj, i) {
+                    return <tr key={i}><td>{obj.name}</td><td>{obj.amount} gram</td></tr>
+                })
+                return <Table bordered size="sm"><tbody>{tableData}</tbody></Table>
+            }
         }
     }
     if(redirect) {
@@ -60,17 +57,16 @@ const Deposit = ({balance, setBalance, depot, setDepot}) => {
     }
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 <Card.Header>Depot</Card.Header>
                 <ListGroup variant="flush">
                     <ListGroup.Item>Email: {depot.email}
-                        <Button variant="dark" onClick={logOut}>Log out</Button>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        Balance: {balance} kr
+                        <p>Balance: <b>{balance} kr</b></p>
                         <Balance balance={balance} setBalance={setBalance} />
                     </ListGroup.Item>
-                    <ListGroup.Item>Objects: {checkForObjects()}</ListGroup.Item>
+                    <ListGroup.Item><p>Objects: </p>{checkForObjects()}</ListGroup.Item>
                 </ListGroup>
             </Card>
         </div>

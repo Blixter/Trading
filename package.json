@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
     "mocha": "^6.2.2",
     "selenium-webdriver": "^3.6.0"
   }

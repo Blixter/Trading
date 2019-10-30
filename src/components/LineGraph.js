@@ -93,7 +93,6 @@ class LineGraph extends Component {
         });
 
         socket.on('stocks', (socketData) => {
-            // data.push(socketData[0].data)
             ApexCharts.exec('realtime', 'updateSeries', [{
                 name: socketData[0].name,
                 data: socketData[0].data,

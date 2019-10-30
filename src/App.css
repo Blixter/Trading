@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+}
+
+.footerText {
+  margin-top: 1rem;
+}
+
+h1, .card {
+  margin-top: 2.5rem !important;
+}
