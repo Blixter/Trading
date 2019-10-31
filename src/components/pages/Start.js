@@ -4,7 +4,7 @@ import { Jumbotron, Container, Row, Col } from 'react-bootstrap'
 const Start = () => {
 
     return (
-        <Container>
+        <Container className="start">
             <Row>
                 <Col md></Col>
                 <Col md={10}>

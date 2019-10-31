@@ -96,7 +96,7 @@ class Login extends Component {
         }
 
         return (
-            <Container>
+            <Container className="login">
                 <Row>
                     <Col md></Col>
                     <Col md={6}>
